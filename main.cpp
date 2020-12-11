@@ -23,6 +23,9 @@ GLfloat rain_speed1 = 0.02f;
 GLfloat rain_position2 = 0.0f;
 GLfloat rain_speed2 = 0.01f;
 
+GLfloat position_ship = 0.0f;
+GLfloat speed_ship = 0.01f;
+
 
 
 void load_Start();
@@ -48,6 +51,20 @@ void update_sun(int value)
     position_sun_down -= speed_sun/3;
 	//glutPostRedisplay();
 	glutTimerFunc(135, update_sun, 0);
+}
+
+void update_ship(int value)
+{
+
+   if(position_ship <-1.0)
+    {
+        position_ship = 1.0f;
+    }
+    position_ship -= speed_ship;
+	//glutPostRedisplay();
+	glutTimerFunc(100, update_ship, 0);
+
+
 }
 
 void update_moon(int value)
@@ -98,6 +115,34 @@ void update_rain(int value)
 void load_Restart(int x)
 {
     glutDisplayFunc(load_Start);
+}
+
+void ship()
+{
+    glPushMatrix();
+    glTranslatef(-position_ship, 0.0f, 0.0f);
+
+    glColor3ub(153, 51, 51);
+    glBegin(GL_POLYGON);
+    glVertex2f(-0.65,0.17);
+    glVertex2f(-0.55,0.08);
+    glVertex2f(-0.4,0.08);
+    glVertex2f(-0.3,0.17);
+    glEnd();
+
+    glColor3ub(57, 20, 20);
+    glBegin(GL_QUADS);
+    glVertex2f(-0.55,0.17);
+    glVertex2f(-0.55,0.25);
+    glVertex2f(-0.4,0.25);
+    glVertex2f(-0.4,0.17);
+    glEnd();
+
+
+	glLoadIdentity();
+	glPopMatrix();
+
+
 }
 
 void rain()
@@ -1142,9 +1187,12 @@ void Evening_Sky()
     glVertex2f(-1.0f, -1.0f);
     glEnd();
 
+
     Sun();
 
     Cloud();
+
+
 }
 
 void drawCircle(float x1, float y1,double radius)
@@ -1681,6 +1729,7 @@ void View_Evening() ///EVENING TIME
     Evening_Sand();
     Evening_Sea();
     Evening_Mountain();
+    ship();
 
     glutTimerFunc(5500,load_Night,0);
 
@@ -1702,7 +1751,9 @@ void View_Day() ///DAY TIME
     Day_Sea();
     Day_Mountain();
     cottage();
+    //ship();
     rain();
+
 
     glutTimerFunc(5500,load_Evening,1);
 
@@ -1748,12 +1799,14 @@ int main(int argc, char** argv)
 	glutTimerFunc(100, update_cloud, 0);
 	glutTimerFunc(100, update_moon, 0);
 	glutTimerFunc(100, update_rain, 0);
+	glutTimerFunc(100, update_ship, 0);
 
 	glutKeyboardFunc(handleKeypress);
 
     ///"W:\\CODES\\Computer Graphics\\Final\\Sea_Beach_Dynamic_View\\"
-    sndPlaySound( "W:\\CODES\\Computer Graphics\\Final\\Sea_Beach_Dynamic_View\\sound_effect_wav.wav", SND_ASYNC|SND_LOOP );
+    //sndPlaySound( "W:\\CODES\\Computer Graphics\\Final\\Sea_Beach_Dynamic_View\\sound_effect_wav.wav", SND_ASYNC|SND_LOOP );
 
+    sndPlaySound( "C:\\Users\\aacfahim\\Desktop\\Dynamic-Sea-Beach-View\\sound_effect_wav.wav", SND_ASYNC|SND_LOOP );
     glutIdleFunc(Idle);
 
 	glutMainLoop();
