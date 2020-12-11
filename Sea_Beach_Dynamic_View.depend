@@ -229,3 +229,11 @@
 	<_mingw.h>
 	<stddef.h>
 
+1607692562 source:w:\codes\computer graphics\final\sea_beach_dynamic_view\dynamic-sea-beach-view\main.cpp
+	<cstdio>
+	<windows.h>
+	<GL/gl.h>
+	<GL/glut.h>
+	<math.h>
+	<bits/stdc++.h>
+

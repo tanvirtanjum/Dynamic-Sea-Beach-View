@@ -1803,8 +1803,13 @@ int main(int argc, char** argv)
 
 	glutKeyboardFunc(handleKeypress);
 
+<<<<<<< HEAD
     ///"W:\\CODES\\Computer Graphics\\Final\\Sea_Beach_Dynamic_View\\"
     //sndPlaySound( "W:\\CODES\\Computer Graphics\\Final\\Sea_Beach_Dynamic_View\\sound_effect_wav.wav", SND_ASYNC|SND_LOOP );
+=======
+    ///"W:\\CODES\\Computer Graphics\\Final\\Sea_Beach_Dynamic_View\\Dynamic-Sea-Beach-View\\sound_effect_wav.wav"
+    sndPlaySound( "W:\\CODES\\Computer Graphics\\Final\\Sea_Beach_Dynamic_View\\Dynamic-Sea-Beach-View\\sound_effect_wav.wav", SND_ASYNC|SND_LOOP );
+>>>>>>> 57bfdccb93b108b3f8c3df91bf46d1c5c3f835bd
 
     sndPlaySound( "C:\\Users\\aacfahim\\Desktop\\Dynamic-Sea-Beach-View\\sound_effect_wav.wav", SND_ASYNC|SND_LOOP );
     glutIdleFunc(Idle);
