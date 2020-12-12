@@ -18,6 +18,9 @@ GLfloat speed_moon = 0.0175f;
 GLfloat position_cloud = 0.0f;
 GLfloat speed_cloud = 0.0175f;
 
+GLfloat position_bird = 0.0f;
+GLfloat speed_bird = 0.0175f;
+
 GLfloat rain_position1 = 0.0f;
 GLfloat rain_speed1 = 0.02f;
 GLfloat rain_position2 = 0.0f;
@@ -37,7 +40,6 @@ void Idle()
 {
     glutPostRedisplay();
 }
-
 
 void update_sun(int value)
 {
@@ -92,6 +94,18 @@ void update_cloud(int value)
 	glutTimerFunc(100, update_cloud, 0);
 }
 
+void update_bird(int value)
+{
+
+    if(position_bird <-1.0)
+    {
+        position_bird = 1.0f;
+    }
+    position_bird -= speed_bird;
+	//glutPostRedisplay();
+	glutTimerFunc(100, update_bird, 0);
+}
+
 void update_rain(int value)
 {
 
@@ -139,7 +153,7 @@ void ship()
     glEnd();
 
 
-	glLoadIdentity();
+	//glLoadIdentity();
 	glPopMatrix();
 
 
@@ -858,7 +872,7 @@ void Moon()
 void Cloud()
 {
     glPushMatrix();
-    glTranslatef(-position_cloud, 0.0f, 0.0f);
+    glTranslatef(position_cloud, 0.0f, 0.0f);
     float xC,yC,radiusC,triangleAmountC,twicePiC;
     xC= -0.4f, yC= 0.7f, radiusC =.09f;
     triangleAmountC = 20;
@@ -968,6 +982,166 @@ void Cloud()
 	glPopMatrix();
 }
 
+void Bird()
+{
+    glPushMatrix();
+    glTranslatef(-position_bird, 0.0f, 0.0f);
+    int i;
+
+	GLfloat mm=0.182f; GLfloat nn=.801f; GLfloat radiusmm =.01f;
+	int triangleAmount = 20;
+	GLfloat twicePi = 2.0f * PI;
+
+	glBegin(GL_TRIANGLE_FAN);
+	    glColor3ub(225, 225, 208);
+		glVertex2f(mm, nn); // center of circle
+		for(i = 0; i <= triangleAmount;i++) {
+			glVertex2f(
+		            mm + (radiusmm * cos(i *  twicePi / triangleAmount)),
+			    nn + (radiusmm * sin(i * twicePi / triangleAmount))
+			);
+		}
+	glEnd();
+    glBegin(GL_POLYGON);
+    glColor3ub(225, 225, 208 );
+    glVertex2f(0.1f,0.8f);
+    glVertex2f(0.11f,0.79f);
+    glVertex2f(0.12f,0.78f);
+    glVertex2f(0.16f,0.77f);
+    glVertex2f(0.19f,0.79f);
+    glVertex2f(0.201f,0.8f);
+    glEnd();
+
+    glBegin(GL_TRIANGLES);
+    glColor3ub(217, 217, 217);
+    glVertex2f(0.175f,0.8f);
+    glVertex2f(0.15f,0.8f);
+    glVertex2f(0.14f,0.84f);
+    glEnd();
+
+
+    glBegin(GL_TRIANGLES);
+    glColor3ub(242, 242, 242 );
+    glVertex2f(0.175f,0.8f);
+    glVertex2f(0.144f,0.8f);
+    glVertex2f(0.12f,0.83f);
+    glEnd();
+	/////2nd bird////
+	glBegin(GL_POLYGON);
+    glColor3ub(225, 225, 208 );
+    glVertex2f(-0.02f,0.8f);
+    glVertex2f(-0.01f,0.79f);
+    glVertex2f(0.0f,0.78f);
+    glVertex2f(0.04f,0.77f);
+    glVertex2f(0.07f,0.79f);
+    glVertex2f(0.081f,0.8f);
+    glEnd();
+
+    glBegin(GL_TRIANGLES);
+    glColor3ub(217, 217, 217);
+    glVertex2f(0.055f,0.8f);
+    glVertex2f(0.03f,0.8f);
+    glVertex2f(0.02f,0.84f);
+    glEnd();
+
+
+    glBegin(GL_TRIANGLES);
+    glColor3ub(242, 242, 242 );
+    glVertex2f(0.055f,0.8f);
+    glVertex2f(0.024f,0.8f);
+    glVertex2f(0.0f,0.83f);
+    glEnd();
+
+	GLfloat mmm=0.062f; GLfloat nnn=.801f; GLfloat radiusmmm =.01f;
+
+	glBegin(GL_TRIANGLE_FAN);
+	    glColor3ub(225, 225, 208);
+		glVertex2f(mmm, nnn); // center of circle
+		for(i = 0; i <= triangleAmount;i++) {
+			glVertex2f(
+		            mmm + (radiusmmm * cos(i *  twicePi / triangleAmount)),
+			    nnn + (radiusmmm * sin(i * twicePi / triangleAmount))
+			);
+		}
+	glEnd();
+	/////3rd bird/////
+	glBegin(GL_POLYGON);
+    glColor3ub(225, 225, 208 );
+    glVertex2f(-0.72f,0.8f);
+    glVertex2f(-0.71f,0.79f);
+    glVertex2f(-0.7f,0.78f);
+    glVertex2f(-0.66f,0.77f);
+    glVertex2f(-0.63f,0.79f);
+    glVertex2f(-0.619f,0.8f);
+    glEnd();
+
+    glBegin(GL_TRIANGLES);
+    glColor3ub(217, 217, 217);
+    glVertex2f(-0.645f,0.8f);
+    glVertex2f(-0.67f,0.8f);
+    glVertex2f(-0.68f,0.84f);
+    glEnd();
+
+    glBegin(GL_TRIANGLES);
+    glColor3ub(242, 242, 242 );
+    glVertex2f(-0.645f,0.8f);
+    glVertex2f(-0.676f,0.8f);
+    glVertex2f(-0.7f,0.83f);
+    glEnd();
+
+	GLfloat mmmm=-0.638f; GLfloat nnnn=.801f;
+
+	glBegin(GL_TRIANGLE_FAN);
+	    glColor3ub(225, 225, 208);
+		glVertex2f(mmmm,nnnn); // center of circle
+		for(i = 0; i <= triangleAmount;i++) {
+			glVertex2f(
+		            mmmm + (radiusmmm * cos(i *  twicePi / triangleAmount)),
+			    nnnn + (radiusmmm * sin(i * twicePi / triangleAmount))
+			);
+		}
+	glEnd();
+	////4th bird////
+	GLfloat mmmmm=-0.518f; GLfloat nnnnn=.801f;
+
+	glBegin(GL_TRIANGLE_FAN);
+	    glColor3ub(225, 225, 208);
+		glVertex2f(mmmmm, nnnnn); // center of circle
+		for(i = 0; i <= triangleAmount;i++) {
+			glVertex2f(
+		            mmmmm + (radiusmm * cos(i *  twicePi / triangleAmount)),
+			    nnnnn + (radiusmm * sin(i * twicePi / triangleAmount))
+			);
+		}
+	glEnd();
+    glBegin(GL_POLYGON);
+    glColor3ub(225, 225, 208 );
+    glVertex2f(-0.6f,0.8f);
+    glVertex2f(-0.59f,0.79f);
+    glVertex2f(-0.58f,0.78f);
+    glVertex2f(-0.54f,0.77f);
+    glVertex2f(-0.51f,0.79f);
+    glVertex2f(-0.499f,0.8f);
+    glEnd();
+
+    glBegin(GL_TRIANGLES);
+    glColor3ub(217, 217, 217);
+    glVertex2f(-0.525f,0.8f);
+    glVertex2f(-0.55f,0.8f);
+    glVertex2f(-0.56f,0.84f);
+    glEnd();
+
+
+    glBegin(GL_TRIANGLES);
+    glColor3ub(242, 242, 242 );
+    glVertex2f(-0.525f,0.8f);
+    glVertex2f(-0.556f,0.8f);
+    glVertex2f(-0.58f,0.83f);
+    glEnd();
+    glPopMatrix();
+
+}
+
 void cottage()
 {
     glBegin(GL_POLYGON);
@@ -1036,6 +1210,7 @@ void tree()
 
 void Day_Sky()
 {
+
     glBegin(GL_QUADS);
     glColor3ub(0, 153, 255);
     glVertex2f(-1.0, 1.0f);
@@ -1112,8 +1287,15 @@ void Day_Sky()
 
     Cloud();
 
+    Bird();
+
+    glTranslatef(0.2, -0.1, 0.0);
+        Bird();
+    glLoadIdentity();
+
 
 }
+
 void Evening_Sky()
 {
     glBegin(GL_QUADS);
@@ -1192,6 +1374,11 @@ void Evening_Sky()
 
     Cloud();
 
+    Bird();
+
+    glTranslatef(0.2, -0.1, 0.0);
+        Bird();
+    glLoadIdentity();
 
 }
 
@@ -1333,7 +1520,6 @@ void Evening_Sea()
     ///ADD POLIGON IN SAND
 
 }
-
 
 void Day_Mountain()
 {
@@ -1797,21 +1983,20 @@ int main(int argc, char** argv)
 
 	glutTimerFunc(100, update_sun, 0);
 	glutTimerFunc(100, update_cloud, 0);
+	glutTimerFunc(100, update_bird, 0);
 	glutTimerFunc(100, update_moon, 0);
 	glutTimerFunc(100, update_rain, 0);
 	glutTimerFunc(100, update_ship, 0);
 
 	glutKeyboardFunc(handleKeypress);
 
-<<<<<<< HEAD
-    ///"W:\\CODES\\Computer Graphics\\Final\\Sea_Beach_Dynamic_View\\"
-    //sndPlaySound( "W:\\CODES\\Computer Graphics\\Final\\Sea_Beach_Dynamic_View\\sound_effect_wav.wav", SND_ASYNC|SND_LOOP );
-=======
-    ///"W:\\CODES\\Computer Graphics\\Final\\Sea_Beach_Dynamic_View\\Dynamic-Sea-Beach-View\\sound_effect_wav.wav"
+	///Sound Effect. Comment our other's directory before use.
+    ///Tanvir's Directory For Sound
     sndPlaySound( "W:\\CODES\\Computer Graphics\\Final\\Sea_Beach_Dynamic_View\\Dynamic-Sea-Beach-View\\sound_effect_wav.wav", SND_ASYNC|SND_LOOP );
->>>>>>> 57bfdccb93b108b3f8c3df91bf46d1c5c3f835bd
 
-    sndPlaySound( "C:\\Users\\aacfahim\\Desktop\\Dynamic-Sea-Beach-View\\sound_effect_wav.wav", SND_ASYNC|SND_LOOP );
+    ///Ashfaq's Directory For Sound
+    ///sndPlaySound( "C:\\Users\\aacfahim\\Desktop\\Dynamic-Sea-Beach-View\\sound_effect_wav.wav", SND_ASYNC|SND_LOOP );
+
     glutIdleFunc(Idle);
 
 	glutMainLoop();
