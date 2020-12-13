@@ -133,30 +133,88 @@ void load_Restart(int x)
 
 void ship()
 {
+    glScalef(.2,.2,0);
+
+    glTranslatef(.3,.9,0);
     glPushMatrix();
-    glTranslatef(-position_ship, 0.0f, 0.0f);
-
-    glColor3ub(153, 51, 51);
+    glTranslatef(position_ship,0.0, 0.0f);
     glBegin(GL_POLYGON);
-    glVertex2f(-0.65,0.17);
-    glVertex2f(-0.55,0.08);
-    glVertex2f(-0.4,0.08);
-    glVertex2f(-0.3,0.17);
+    glColor3ub(52, 73, 94 );
+    glVertex2f(-0.3f, -0.2f);
+    glVertex2f(-0.3f, -0.4f);
+    glVertex2f(0.1f, -0.4f);
+    glVertex2f(0.3f, -0.2f);
     glEnd();
 
-    glColor3ub(57, 20, 20);
-    glBegin(GL_QUADS);
-    glVertex2f(-0.55,0.17);
-    glVertex2f(-0.55,0.25);
-    glVertex2f(-0.4,0.25);
-    glVertex2f(-0.4,0.17);
+    /// 1st floor
+    glBegin(GL_POLYGON);
+    glColor3ub(51, 0, 128);
+    glVertex2f(-0.25f, -0.07f);
+    glVertex2f(-0.25f, -0.2f);
+    glVertex2f(0.15f, -0.2f);
+    glVertex2f(0.1f, -0.07f);
+    glEnd();
+
+    glBegin(GL_QUADS); ///window1
+    glColor3ub(255, 0, 255);
+    glVertex2f(-0.2f, -0.09f);
+    glVertex2f(-0.2f, -0.18f);
+    glVertex2f(-0.15f, -0.18f);
+    glVertex2f(-0.15f, -0.09f);
+    glEnd();
+
+    glBegin(GL_QUADS); ///window2
+    glColor3ub(241, 196, 15);
+    glVertex2f(-0.1f, -0.09f);
+    glVertex2f(-0.1f, -0.18f);
+    glVertex2f(-0.05f, -0.18f);
+    glVertex2f(-0.05f, -0.09f);
+    glEnd();
+
+    glBegin(GL_QUADS); ///window3
+    glColor3ub(255, 0, 255);
+    glVertex2f(0.0f, -0.09f);
+    glVertex2f(0.0f, -0.18f);
+    glVertex2f(0.05f, -0.18f);
+    glVertex2f(0.05f, -0.09f);
     glEnd();
 
 
-	//glLoadIdentity();
-	glPopMatrix();
+    ///2nd floor
+    glBegin(GL_POLYGON);
+    glColor3ub(33, 97, 140);
+    glVertex2f(-0.2f, 0.05f);
+    glVertex2f(-0.2f, -0.07f);
+    glVertex2f(0.06f, -0.07f);
+    glVertex2f(0.02f, 0.05f);
+    glEnd();
 
+    glBegin(GL_QUADS); ///window1
+    glColor3ub(0, 153, 51);
+    glVertex2f(-0.18f, 0.03f);
+    glVertex2f(-0.18f, -0.061f);
+    glVertex2f(-0.13f, -0.061f);
+    glVertex2f(-0.13f, 0.03f);
+    glEnd();
 
+    /*  glBegin(GL_QUADS); ///window2
+    glColor3ub(241, 196, 15);
+    glVertex2f(-0.12f, 0.03f);
+    glVertex2f(-0.12f, -0.061f);
+    glVertex2f(-0.07f, -0.061f);
+    glVertex2f(-0.07f, 0.03f);
+    glEnd();
+    */
+    glBegin(GL_QUADS); ///window3
+    glColor3ub(0, 153, 51);
+    glVertex2f(-0.06f, 0.03f);
+    glVertex2f(-0.06f, -0.061f);
+    glVertex2f(-0.01f, -0.061f);
+    glVertex2f(-0.01f, 0.03f);
+    glEnd();
+    glPopMatrix();
+
+    glLoadIdentity();
 }
 
 void rain()
@@ -1937,7 +1995,7 @@ void View_Day() ///DAY TIME
     Day_Sea();
     Day_Mountain();
     cottage();
-    //ship();
+    ship();
     rain();
 
 
@@ -1992,7 +2050,7 @@ int main(int argc, char** argv)
 
 	///Sound Effect. Comment our other's directory before use.
     ///Tanvir's Directory For Sound
-    sndPlaySound( "W:\\CODES\\Computer Graphics\\Final\\Sea_Beach_Dynamic_View\\Dynamic-Sea-Beach-View\\sound_effect_wav.wav", SND_ASYNC|SND_LOOP );
+    //sndPlaySound( "W:\\CODES\\Computer Graphics\\Final\\Sea_Beach_Dynamic_View\\Dynamic-Sea-Beach-View\\sound_effect_wav.wav", SND_ASYNC|SND_LOOP );
 
     ///Ashfaq's Directory For Sound
     ///sndPlaySound( "C:\\Users\\aacfahim\\Desktop\\Dynamic-Sea-Beach-View\\sound_effect_wav.wav", SND_ASYNC|SND_LOOP );
