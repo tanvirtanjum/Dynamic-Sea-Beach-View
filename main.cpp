@@ -137,7 +137,7 @@ void ship()
 
     glTranslatef(.3,.9,0);
     glPushMatrix();
-    glTranslatef(position_ship,0.0, 0.0f);
+    glTranslatef(-position_ship,0.0, 0.0f);
     glBegin(GL_POLYGON);
     glColor3ub(52, 73, 94 );
     glVertex2f(-0.3f, -0.2f);
@@ -1948,6 +1948,7 @@ void View_Night() ///NIGHT TIME
 
     Night_Sky();
     Night_Sand();
+    //Sand_Texure();
     Night_Sea();
     Night_Mountain();
     tree();
