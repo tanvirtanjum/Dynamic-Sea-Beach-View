@@ -219,6 +219,8 @@ void ship()
 
 void rain()
 {
+    ///sndPlaySound( "W:\\CODES\\Computer Graphics\\Final\\Sea_Beach_Dynamic_View\\Dynamic-Sea-Beach-View\\Sounds\\Rain.wav", SND_ASYNC|SND_LOOP );
+
     glPushMatrix();
     glTranslatef(rain_position2,rain_position1, 0.0f);
 
@@ -870,7 +872,6 @@ void rain()
     glPopMatrix();
 
     glLoadIdentity();
-
 
 }
 
@@ -1985,6 +1986,7 @@ void handleKeypress(unsigned char key, int x, int y)
 {
     switch (key)
     {
+        ///RAIN START
         case 'r':
             RainController = true;
         break;
@@ -1993,6 +1995,7 @@ void handleKeypress(unsigned char key, int x, int y)
             RainController = true;
         break;
 
+        ///RAIN END
         case 'd':
             RainController = false;
         break;
@@ -2107,11 +2110,24 @@ int main(int argc, char** argv)
 	glutKeyboardFunc(handleKeypress);
 
 	///Sound Effect. Comment our other's directory before use.
-    ///Tanvir's Directory For Sound
-    //sndPlaySound( "W:\\CODES\\Computer Graphics\\Final\\Sea_Beach_Dynamic_View\\Dynamic-Sea-Beach-View\\sound_effect_wav.wav", SND_ASYNC|SND_LOOP );
+    if(RainController == false)
+    {
+        ///Tanvir's Directory For Sound
+        //sndPlaySound( "W:\\CODES\\Computer Graphics\\Final\\Sea_Beach_Dynamic_View\\Dynamic-Sea-Beach-View\\Sounds\\Sea Beach.wav", SND_ASYNC|SND_LOOP );
+        PlaySound(TEXT("./Sounds/Sea Beach.wav"),NULL, SND_ASYNC | SND_LOOP);
 
-    ///Ashfaq's Directory For Sound
-    ///sndPlaySound( "C:\\Users\\aacfahim\\Desktop\\Dynamic-Sea-Beach-View\\sound_effect_wav.wav", SND_ASYNC|SND_LOOP );
+        ///Ashfaq's Directory For Sound
+        ///sndPlaySound( "C:\\Users\\aacfahim\\Desktop\\Dynamic-Sea-Beach-View\\Sounds\\Sea Beach.wav", SND_ASYNC|SND_LOOP );
+    }
+
+    else if(RainController == true)
+    {
+        sndPlaySound( "W:\\CODES\\Computer Graphics\\Final\\Sea_Beach_Dynamic_View\\Dynamic-Sea-Beach-View\\Sounds\\Rain.wav", SND_ASYNC|SND_LOOP );
+    }
+    else
+    {
+
+    }
 
     glutIdleFunc(Idle);
 
