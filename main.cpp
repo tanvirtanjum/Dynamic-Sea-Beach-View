@@ -5,7 +5,7 @@
 #include <math.h>
 ///#include <bits/stdc++.h>
 
-# define PI 3.14159265358979323846
+#define PI 3.14159265358979323846
 
 GLfloat position_sun = 0.0f;
 GLfloat position_sun_down = 0.0f;
