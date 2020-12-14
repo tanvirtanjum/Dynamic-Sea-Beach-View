@@ -29,7 +29,7 @@ GLfloat rain_speed2 = 0.01f;
 GLfloat position_ship = 0.0f;
 GLfloat speed_ship = 0.01f;
 
-
+boolean RainController = false;
 
 void load_Start();
 void load_DayBack();
@@ -1980,6 +1980,29 @@ void Evening_Sand()
     ///ADD MORE TEXURE
 }
 
+///EVENT HANDLER
+void handleKeypress(unsigned char key, int x, int y)
+{
+    switch (key)
+    {
+        case 'r':
+            RainController = true;
+        break;
+
+        case 'R':
+            RainController = true;
+        break;
+
+        case 'd':
+            RainController = false;
+        break;
+
+        case 'D':
+            RainController = false;
+        break;
+    }
+}
+
 ///VIEWS
 void View_Night() ///NIGHT TIME
 {
@@ -1992,7 +2015,10 @@ void View_Night() ///NIGHT TIME
     Night_Sea();
     Night_Mountain();
     tree();
-    rain();
+    if(RainController == true)
+    {
+        rain();
+    }
 
     glutTimerFunc(5500,load_Restart,0);
 
@@ -2015,6 +2041,10 @@ void View_Evening() ///EVENING TIME
     Evening_Sea();
     Evening_Mountain();
     ship();
+    if(RainController == true)
+    {
+        rain();
+    }
 
     glutTimerFunc(5500,load_Night,0);
 
@@ -2037,7 +2067,10 @@ void View_Day() ///DAY TIME
     Day_Mountain();
     cottage();
     ship();
-    rain();
+    if(RainController == true)
+    {
+        rain();
+    }
 
 
     glutTimerFunc(5500,load_Evening,1);
@@ -2053,22 +2086,6 @@ void load_Day(int x)
 void load_Start()
 {
     glutDisplayFunc(View_Day);
-}
-
-void handleKeypress(unsigned char key, int x, int y)
-{
-    switch (key)
-    {
-        case 'p':
-            rain();
-        break;
-
-        case 'm':
-            ///
-        break;
-
-        glutPostRedisplay();
-    }
 }
 
 int main(int argc, char** argv)
