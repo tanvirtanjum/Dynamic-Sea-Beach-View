@@ -1669,7 +1669,7 @@ void Evening_Mountain()
     glLoadIdentity();
 }
 
-void Sand_Texure()
+void Day_Sand_Texure()
 {
     ///SAND TEXURE
     glBegin(GL_LINES);
@@ -1689,6 +1689,46 @@ void Sand_Texure()
     glEnd();
 }
 
+void Evening_Sand_Texure()
+{
+    ///SAND TEXURE
+    glBegin(GL_LINES);
+    glColor3ub(153, 153, 0);
+    glVertex2f(-0.95,-0.35);
+    glVertex2f(-0.91,-0.32);
+    glEnd();
+    glBegin(GL_LINES);
+    glColor3ub(153, 153, 0);
+    glVertex2f(-0.91,-0.32);
+    glVertex2f(-0.91,-0.35);
+    glEnd();
+    glBegin(GL_LINES);
+    glColor3ub(153, 153, 0);
+    glVertex2f(-0.91,-0.35);
+    glVertex2f(-0.87,-0.33);
+    glEnd();
+}
+
+void Night_Sand_Texure()
+{
+    ///SAND TEXURE
+    glBegin(GL_LINES);
+    glColor3ub(0, 0, 0);
+    glVertex2f(-0.95,-0.35);
+    glVertex2f(-0.91,-0.32);
+    glEnd();
+    glBegin(GL_LINES);
+    glColor3ub(0, 0, 0);
+    glVertex2f(-0.91,-0.32);
+    glVertex2f(-0.91,-0.35);
+    glEnd();
+    glBegin(GL_LINES);
+    glColor3ub(0, 0, 0);
+    glVertex2f(-0.91,-0.35);
+    glVertex2f(-0.87,-0.33);
+    glEnd();
+}
+
 void Day_Sand()
 {
     glBegin(GL_QUADS);
@@ -1699,74 +1739,74 @@ void Day_Sand()
     glVertex2f(-1.0f, -1.0f);
     glEnd();
 
-    Sand_Texure();
+    Day_Sand_Texure();
 
     glTranslatef(0.2, -0.2, 0.0);
-    Sand_Texure();
+    Day_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(0.15, -0.3, 0.0);
-    Sand_Texure();
+    Day_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(0.35, -0.4, 0.0);
-    Sand_Texure();
+    Day_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(0.55, -0.5, 0.0);
-    Sand_Texure();
+    Day_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(0.65, -0.45, 0.0);
-    Sand_Texure();
+    Day_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(0.2, -0.2, 0.0);
-    Sand_Texure();
+    Day_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(0.15, -0.3, 0.0);
-    Sand_Texure();
+    Day_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(0.35, -0.4, 0.0);
-    Sand_Texure();
+    Day_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(0.55, -0.5, 0.0);
-    Sand_Texure();
+    Day_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(0.65, -0.45, 0.0);
-    Sand_Texure();
+    Day_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(0.75, -0.25, 0.0);
-    Sand_Texure();
+    Day_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(0.75, -0.45, 0.0);
-    Sand_Texure();
+    Day_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(1.75, -0.45, 0.0);
-    Sand_Texure();
+    Day_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(1.85, -0.35, 0.0);
-    Sand_Texure();
+    Day_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(1.55, -0.55, 0.0);
-    Sand_Texure();
+    Day_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(1.35, -0.60, 0.0);
-    Sand_Texure();
+    Day_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(0.95, -0.60, 0.0);
-    Sand_Texure();
+    Day_Sand_Texure();
     glLoadIdentity();
 
     ///ADD MORE TEXURE
@@ -1784,74 +1824,74 @@ void Night_Sand()
     glVertex2f(-1.0f, -1.0f);
     glEnd();
 
-    Sand_Texure();
+    Night_Sand_Texure();
 
     glTranslatef(0.2, -0.2, 0.0);
-    Sand_Texure();
+    Night_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(0.15, -0.3, 0.0);
-    Sand_Texure();
+    Night_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(0.35, -0.4, 0.0);
-    Sand_Texure();
+    Night_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(0.55, -0.5, 0.0);
-    Sand_Texure();
+    Night_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(0.65, -0.45, 0.0);
-    Sand_Texure();
+    Night_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(0.2, -0.2, 0.0);
-    Sand_Texure();
+    Night_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(0.15, -0.3, 0.0);
-    Sand_Texure();
+    Night_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(0.35, -0.4, 0.0);
-    Sand_Texure();
+    Night_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(0.55, -0.5, 0.0);
-    Sand_Texure();
+    Night_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(0.65, -0.45, 0.0);
-    Sand_Texure();
+    Night_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(0.75, -0.25, 0.0);
-    Sand_Texure();
+    Night_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(0.75, -0.45, 0.0);
-    Sand_Texure();
+    Night_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(1.75, -0.45, 0.0);
-    Sand_Texure();
+    Night_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(1.85, -0.35, 0.0);
-    Sand_Texure();
+    Night_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(1.55, -0.55, 0.0);
-    Sand_Texure();
+    Night_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(1.35, -0.60, 0.0);
-    Sand_Texure();
+    Night_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(0.95, -0.60, 0.0);
-    Sand_Texure();
+    Night_Sand_Texure();
     glLoadIdentity();
 
     ///ADD MORE TEXURE
@@ -1867,74 +1907,74 @@ void Evening_Sand()
     glVertex2f(-1.0f, -1.0f);
     glEnd();
 
-    Sand_Texure();
+    Evening_Sand_Texure();
 
     glTranslatef(0.2, -0.2, 0.0);
-    Sand_Texure();
+    Evening_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(0.15, -0.3, 0.0);
-    Sand_Texure();
+    Evening_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(0.35, -0.4, 0.0);
-    Sand_Texure();
+    Evening_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(0.55, -0.5, 0.0);
-    Sand_Texure();
+    Evening_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(0.65, -0.45, 0.0);
-    Sand_Texure();
+    Evening_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(0.2, -0.2, 0.0);
-    Sand_Texure();
+    Evening_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(0.15, -0.3, 0.0);
-    Sand_Texure();
+    Evening_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(0.35, -0.4, 0.0);
-    Sand_Texure();
+    Evening_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(0.55, -0.5, 0.0);
-    Sand_Texure();
+    Evening_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(0.65, -0.45, 0.0);
-    Sand_Texure();
+    Evening_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(0.75, -0.25, 0.0);
-    Sand_Texure();
+    Evening_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(0.75, -0.45, 0.0);
-    Sand_Texure();
+    Evening_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(1.75, -0.45, 0.0);
-    Sand_Texure();
+    Evening_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(1.85, -0.35, 0.0);
-    Sand_Texure();
+    Evening_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(1.55, -0.55, 0.0);
-    Sand_Texure();
+    Evening_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(1.35, -0.60, 0.0);
-    Sand_Texure();
+    Evening_Sand_Texure();
     glLoadIdentity();
 
     glTranslatef(0.95, -0.60, 0.0);
-    Sand_Texure();
+    Evening_Sand_Texure();
     glLoadIdentity();
 
     ///ADD MORE TEXURE
@@ -1948,7 +1988,7 @@ void View_Night() ///NIGHT TIME
 
     Night_Sky();
     Night_Sand();
-    //Sand_Texure();
+    Night_Sand();
     Night_Sea();
     Night_Mountain();
     tree();
