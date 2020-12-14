@@ -2012,11 +2012,11 @@ void handleKeypress(unsigned char key, int x, int y)
             RainController = false;
 
             ///Sound Effect. Comment others directory before use.
-            ///Tanvir's Directory For Sound
+            //Tanvir's Directory For Sound
             sndPlaySound( "W:\\CODES\\Computer Graphics\\Final\\Sea_Beach_Dynamic_View\\Dynamic-Sea-Beach-View\\Sounds\\Sea Beach.wav", SND_ASYNC|SND_LOOP );
 
-            ///Ashfaq's Directory For Sound
-            ///sndPlaySound( "C:\\Users\\aacfahim\\Desktop\\Dynamic-Sea-Beach-View\\Sounds\\Sea Beach.wav", SND_ASYNC|SND_LOOP );
+            //Ashfaq's Directory For Sound
+            //sndPlaySound( "C:\\Users\\aacfahim\\Desktop\\Dynamic-Sea-Beach-View\\Sounds\\Sea Beach.wav", SND_ASYNC|SND_LOOP );
         break;
 
         case 'D':
@@ -2137,10 +2137,10 @@ int main(int argc, char** argv)
 	glutKeyboardFunc(handleKeypress);
 
     ///Sound Effect. Comment others directory before use.
-    ///Tanvir's Directory For Sound
+    //Tanvir's Directory For Sound
     sndPlaySound( "W:\\CODES\\Computer Graphics\\Final\\Sea_Beach_Dynamic_View\\Dynamic-Sea-Beach-View\\Sounds\\Sea Beach.wav", SND_ASYNC|SND_LOOP );
 
-    ///Ashfaq's Directory For Sound
+    //Ashfaq's Directory For Sound
     ///sndPlaySound( "C:\\Users\\aacfahim\\Desktop\\Dynamic-Sea-Beach-View\\Sounds\\Sea Beach.wav", SND_ASYNC|SND_LOOP );
 
     glutIdleFunc(Idle);
