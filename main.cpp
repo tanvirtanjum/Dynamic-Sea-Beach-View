@@ -73,7 +73,7 @@ void update_ship(int value)
 
 void update_sea_wave(int value)
 {
-
+/*
    if(position_sea_wave <-.30)
     {
         position_sea_wave = .14f;
@@ -81,6 +81,17 @@ void update_sea_wave(int value)
     position_sea_wave -= speed_sea_wave;
 	//glutPostRedisplay();
 	glutTimerFunc(100, update_sea_wave, 0);
+
+	*/
+
+
+	position_sea_wave -= 50;
+	if(position_sea_wave <= -80)
+		position_sea_wave = 0;
+
+    glutPostRedisplay();
+
+    glutTimerFunc(1500,update_sea_wave,0);
 
 
 }
@@ -239,6 +250,9 @@ void Rain()
 
     glPushMatrix();
     glTranslatef(rain_position2,rain_position1, 0.0f);
+
+    glLineWidth(1.5);
+
 
     // Rain line1
     glColor3ub(174, 214, 241);
@@ -1217,18 +1231,7 @@ void Bird()
 
 }
 
-void Cottage()
-{
-    glBegin(GL_POLYGON);
-    glColor3ub(156, 139, 102);
 
-    glVertex2f(-0.7,-0.5);
-    glVertex2f(-0.6,-0.35);
-    glVertex2f(-0.4,-0.35);
-    glVertex2f(-0.3,-0.5);
-    glEnd();
-
-}
 
 void Tree()
 {
@@ -1568,8 +1571,8 @@ void Evening_Sea()
     ///ADD POLIGON IN SAND
 
 }
-
-void Sea_Wave()
+/*
+void Sea_Wave0()
 {
     glPushMatrix();
     glTranslatef(0.0, position_sea_wave, 0.0f);
@@ -1582,13 +1585,70 @@ void Sea_Wave()
     glVertex2f(-1.0f, 0.12f);
     glEnd();
 
-    /*glBegin(GL_QUADS);
-    glColor3ub(0, 128, 255);
-    glVertex2f(-1.0, .05f);
-    glVertex2f(1.0f, .05f);
-    glVertex2f(1.0, .03f);
-    glVertex2f(-1.0f, 0.03f);
-    glEnd();*/
+    glPopMatrix();
+}*/
+
+
+
+void Sea_Wave(int r, int g, int b)
+{
+    glPushMatrix();
+    glTranslatef(position_sea_wave, 0.0f, 0.0f);
+
+    glTranslatef(0.0f, -0.14f, 0.0f);
+    glBegin(GL_POLYGON);
+    glColor3ub(r, g, b);
+
+    glVertex2f(-1.0, -0.14f);
+    glVertex2f(-0.9f, -0.2f);
+    glVertex2f(-0.8, -0.14f);
+    glVertex2f(-0.7f, -0.2f);
+    glVertex2f(-0.6f, -0.14f);
+    glVertex2f(-0.5f, -0.2f);
+    glVertex2f(-0.4f, -0.14f);
+    glVertex2f(-0.3f, -0.2f);
+    glVertex2f(-0.2f, -0.14f);
+    glVertex2f(-0.1f, -0.2f);
+    glVertex2f(0.0f, -0.14f);
+    glVertex2f(0.1f, -0.1f);
+    glVertex2f(0.2f, -0.14f);
+    glVertex2f(0.3f, -0.2f);
+    glVertex2f(0.4f, -0.14f);
+    glVertex2f(0.5f, -0.2f);
+    glVertex2f(0.6f, -0.14f);
+    glVertex2f(0.7f, -0.2f);
+    glVertex2f(0.8f, -0.14f);
+    glVertex2f(0.9f, -0.2f);
+    glVertex2f(1.0f, -0.14f);
+    glEnd();
+
+    glTranslatef(0.1f, -0.01f, 0.0f);
+
+    glBegin(GL_POLYGON);
+    glColor3ub(r, g, b);
+
+    glVertex2f(-1.0, -0.14f);
+    glVertex2f(-0.9f, -0.2f);
+    glVertex2f(-0.8, -0.14f);
+    glVertex2f(-0.7f, -0.2f);
+    glVertex2f(-0.6f, -0.14f);
+    glVertex2f(-0.5f, -0.2f);
+    glVertex2f(-0.4f, -0.14f);
+    glVertex2f(-0.3f, -0.2f);
+    glVertex2f(-0.2f, -0.14f);
+    glVertex2f(-0.1f, -0.2f);
+    glVertex2f(0.0f, -0.14f);
+    glVertex2f(0.1f, -0.1f);
+    glVertex2f(0.2f, -0.14f);
+    glVertex2f(0.3f, -0.2f);
+    glVertex2f(0.4f, -0.14f);
+    glVertex2f(0.5f, -0.2f);
+    glVertex2f(0.6f, -0.14f);
+    glVertex2f(0.7f, -0.2f);
+    glVertex2f(0.8f, -0.14f);
+    glVertex2f(0.9f, -0.2f);
+    glVertex2f(1.0f, -0.14f);
+    glEnd();
 
     glPopMatrix();
 }
@@ -2036,9 +2096,9 @@ void View_Night() ///NIGHT TIME
     glClear(GL_COLOR_BUFFER_BIT);
 
     Night_Sea();
-    Sea_Wave();
     Night_Sky();
     Night_Sand();
+    Sea_Wave(0, 34, 102);
     Night_Mountain();
     Tree();
     if(RainController == true)
@@ -2062,9 +2122,9 @@ void View_Evening() ///EVENING TIME
     glClear(GL_COLOR_BUFFER_BIT);
 
     Evening_Sea();
-    Sea_Wave();
     Evening_Sky();
     Evening_Sand();
+    Sea_Wave(77, 136, 255);
     Evening_Mountain();
     Tree();
     Ship();
@@ -2091,12 +2151,11 @@ void View_Day() ///DAY TIME
     glClear(GL_COLOR_BUFFER_BIT);
 
     Day_Sea();
-    Sea_Wave();
     Day_Sky();
     Day_Sand();
+    Sea_Wave(102, 153, 255);
     Day_Mountain();
     Tree();
-    Cottage();
     Ship();
     if(RainController == true)
     {

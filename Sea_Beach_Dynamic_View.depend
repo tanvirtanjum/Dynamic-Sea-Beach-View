@@ -213,7 +213,7 @@
 
 1301111164 c:\program files (x86)\codeblocks\mingw\include\gl\gl.h
 
-976692172 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
+976645372 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
 	<windows.h>
 	<GL/gl.h>
 	<GL/glu.h>
@@ -230,6 +230,13 @@
 	<stddef.h>
 
 1608012335 source:w:\codes\computer graphics\final\sea_beach_dynamic_view\dynamic-sea-beach-view\main.cpp
+	<cstdio>
+	<windows.h>
+	<GL/gl.h>
+	<GL/glut.h>
+	<math.h>
+
+1608038878 source:c:\users\aacfahim\desktop\dynamic-sea-beach-view\main.cpp
 	<cstdio>
 	<windows.h>
 	<GL/gl.h>
