@@ -3,7 +3,6 @@
 #include <GL/gl.h>
 #include <GL/glut.h>
 #include <math.h>
-///#include <bits/stdc++.h>
 
 #define PI 3.14159265358979323846
 
@@ -16,10 +15,10 @@ GLfloat position_moon_down = 0.0f;
 GLfloat speed_moon = 0.0175f;
 
 GLfloat position_cloud = 0.0f;
-GLfloat speed_cloud = 0.0175f;
+GLfloat speed_cloud = 0.02f;
 
 GLfloat position_bird = 0.0f;
-GLfloat speed_bird = 0.0175f;
+GLfloat speed_bird = 0.03f;
 
 GLfloat rain_position1 = 0.0f;
 GLfloat rain_speed1 = 0.02f;
@@ -28,6 +27,9 @@ GLfloat rain_speed2 = 0.01f;
 
 GLfloat position_ship = 0.0f;
 GLfloat speed_ship = 0.01f;
+
+GLfloat position_sea_wave = 0.0f;
+GLfloat speed_sea_wave = 0.05f;
 
 boolean RainController = false;
 
@@ -65,6 +67,20 @@ void update_ship(int value)
     position_ship -= speed_ship;
 	//glutPostRedisplay();
 	glutTimerFunc(100, update_ship, 0);
+
+
+}
+
+void update_sea_wave(int value)
+{
+
+   if(position_sea_wave <-.30)
+    {
+        position_sea_wave = .14f;
+    }
+    position_sea_wave -= speed_sea_wave;
+	//glutPostRedisplay();
+	glutTimerFunc(100, update_sea_wave, 0);
 
 
 }
@@ -131,7 +147,7 @@ void load_Restart(int x)
     glutDisplayFunc(load_Start);
 }
 
-void ship()
+void Ship()
 {
     glScalef(.2,.2,0);
 
@@ -217,7 +233,7 @@ void ship()
     glLoadIdentity();
 }
 
-void rain()
+void Rain()
 {
     ///sndPlaySound( "W:\\CODES\\Computer Graphics\\Final\\Sea_Beach_Dynamic_View\\Dynamic-Sea-Beach-View\\Sounds\\Rain.wav", SND_ASYNC|SND_LOOP );
 
@@ -1201,7 +1217,7 @@ void Bird()
 
 }
 
-void cottage()
+void Cottage()
 {
     glBegin(GL_POLYGON);
     glColor3ub(156, 139, 102);
@@ -1214,7 +1230,7 @@ void cottage()
 
 }
 
-void tree()
+void Tree()
 {
 
     glBegin(GL_QUADS);
@@ -1326,20 +1342,6 @@ void Day_Sky()
     glVertex2f(1.0f, .15f);
     glVertex2f(-1.0f, .15f);
     glEnd();
-    glBegin(GL_QUADS);
-    glColor3ub(204, 235, 255);
-    glVertex2f(-1.0, .15f);
-    glVertex2f(1.0f, .15f);
-    glVertex2f(1.0f, -.15f);
-    glVertex2f(-1.0f, -.15f);
-    glEnd();
-    glBegin(GL_QUADS);
-    glColor3ub(230, 245, 255);
-    glVertex2f(-1.0, .15f);
-    glVertex2f(1.0f, .15f);
-    glVertex2f(1.0f, -1.0f);
-    glVertex2f(-1.0f, -1.0f);
-    glEnd();
 
     glEnable(GL_LIGHTING);
     GLfloat sun_shine[] = {77, 77, 0, 7.5};
@@ -1416,21 +1418,6 @@ void Evening_Sky()
     glVertex2f(1.0f, .15f);
     glVertex2f(-1.0f, .15f);
     glEnd();
-    glBegin(GL_QUADS);
-    glColor3ub(255, 255, 204);
-    glVertex2f(-1.0, .15f);
-    glVertex2f(1.0f, .15f);
-    glVertex2f(1.0f, -.15f);
-    glVertex2f(-1.0f, -.15f);
-    glEnd();
-    glBegin(GL_QUADS);
-    glColor3ub(255, 255, 204);
-    glVertex2f(-1.0, .15f);
-    glVertex2f(1.0f, .15f);
-    glVertex2f(1.0f, -1.0f);
-    glVertex2f(-1.0f, -1.0f);
-    glEnd();
-
 
     Sun();
 
@@ -1532,8 +1519,8 @@ void Night_Sky()
     glColor3ub(44,62,80);
     glVertex2f(-1.0, 1.0f);
     glVertex2f(1.0f, 1.0f);
-    glVertex2f(1.0f, -1.0f);
-    glVertex2f(-1.0f, -1.0f);
+    glVertex2f(1.0f, .15f);
+    glVertex2f(-1.0f, .15f);
     glEnd();
 
     Stars();
@@ -1566,7 +1553,6 @@ void Night_Sea()
     glEnd();
 
     ///ADD POLIGON IN SAND
-
 }
 
 void Evening_Sea()
@@ -1581,6 +1567,30 @@ void Evening_Sea()
 
     ///ADD POLIGON IN SAND
 
+}
+
+void Sea_Wave()
+{
+    glPushMatrix();
+    glTranslatef(0.0, position_sea_wave, 0.0f);
+
+    glBegin(GL_QUADS);
+    glColor3ub(0, 128, 255);
+    glVertex2f(-1.0, .14f);
+    glVertex2f(1.0f, .14f);
+    glVertex2f(1.0, .12f);
+    glVertex2f(-1.0f, 0.12f);
+    glEnd();
+
+    /*glBegin(GL_QUADS);
+    glColor3ub(0, 128, 255);
+    glVertex2f(-1.0, .05f);
+    glVertex2f(1.0f, .05f);
+    glVertex2f(1.0, .03f);
+    glVertex2f(-1.0f, 0.03f);
+    glEnd();*/
+
+    glPopMatrix();
 }
 
 void Day_Mountain()
@@ -1814,8 +1824,6 @@ void Day_Sand()
     glLoadIdentity();
 
     ///ADD MORE TEXURE
-
-    tree();
 }
 
 void Night_Sand()
@@ -2027,15 +2035,15 @@ void View_Night() ///NIGHT TIME
 	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
 
+    Night_Sea();
+    Sea_Wave();
     Night_Sky();
     Night_Sand();
-    Night_Sand();
-    Night_Sea();
     Night_Mountain();
-    tree();
+    Tree();
     if(RainController == true)
     {
-        rain();
+        Rain();
     }
 
     glutTimerFunc(5500,load_Restart,0);
@@ -2053,15 +2061,16 @@ void View_Evening() ///EVENING TIME
 	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
 
-
+    Evening_Sea();
+    Sea_Wave();
     Evening_Sky();
     Evening_Sand();
-    Evening_Sea();
     Evening_Mountain();
-    ship();
+    Tree();
+    Ship();
     if(RainController == true)
     {
-        rain();
+        Rain();
     }
 
     glutTimerFunc(5500,load_Night,0);
@@ -2081,15 +2090,17 @@ void View_Day() ///DAY TIME
     glClearColor(1.0f, 1.0f, 1.0f, 0.0f);
     glClear(GL_COLOR_BUFFER_BIT);
 
+    Day_Sea();
+    Sea_Wave();
     Day_Sky();
     Day_Sand();
-    Day_Sea();
     Day_Mountain();
-    cottage();
-    ship();
+    Tree();
+    Cottage();
+    Ship();
     if(RainController == true)
     {
-        rain();
+        Rain();
     }
 
     glutTimerFunc(5500,load_Evening,1);
@@ -2122,6 +2133,7 @@ int main(int argc, char** argv)
 	glutTimerFunc(100, update_moon, 0);
 	glutTimerFunc(100, update_rain, 0);
 	glutTimerFunc(100, update_ship, 0);
+	glutTimerFunc(100, update_sea_wave, 0);
 
 	glutKeyboardFunc(handleKeypress);
 
