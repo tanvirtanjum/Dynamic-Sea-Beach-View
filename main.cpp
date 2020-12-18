@@ -1232,7 +1232,6 @@ void Bird()
 }
 
 
-
 void Tree()
 {
 
@@ -1354,13 +1353,14 @@ void Day_Sky()
 
     Cloud();
 
-    Bird();
-
-    glTranslatef(0.2, -0.1, 0.0);
+    if(RainController == false)
+    {
         Bird();
-    glLoadIdentity();
 
-
+        glTranslatef(0.2, -0.1, 0.0);
+            Bird();
+        glLoadIdentity();
+    }
 }
 
 void Evening_Sky()
@@ -1426,11 +1426,14 @@ void Evening_Sky()
 
     Cloud();
 
-    Bird();
-
-    glTranslatef(0.2, -0.1, 0.0);
+    if(RainController == false)
+    {
         Bird();
-    glLoadIdentity();
+
+        glTranslatef(0.2, -0.1, 0.0);
+            Bird();
+        glLoadIdentity();
+    }
 
 }
 
@@ -1571,24 +1574,6 @@ void Evening_Sea()
     ///ADD POLIGON IN SAND
 
 }
-/*
-void Sea_Wave0()
-{
-    glPushMatrix();
-    glTranslatef(0.0, position_sea_wave, 0.0f);
-
-    glBegin(GL_QUADS);
-    glColor3ub(0, 128, 255);
-    glVertex2f(-1.0, .14f);
-    glVertex2f(1.0f, .14f);
-    glVertex2f(1.0, .12f);
-    glVertex2f(-1.0f, 0.12f);
-    glEnd();
-
-    glPopMatrix();
-}*/
-
-
 
 void Sea_Wave(int r, int g, int b)
 {
