@@ -243,3 +243,10 @@
 	<GL/glut.h>
 	<math.h>
 
+1608651462 source:c:\users\tindra\desktop\cg\dynamic-sea-beach-view\main.cpp
+	<cstdio>
+	<windows.h>
+	<GL/gl.h>
+	<GL/glut.h>
+	<math.h>
+
