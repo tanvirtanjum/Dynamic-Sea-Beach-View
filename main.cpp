@@ -2041,10 +2041,10 @@ void Evening_Sand()
 
     ///ADD MORE TEXURE
 }
-///Umbrella_Added
+///UMBRELLA
 void umbrella()
 {
-    ///Umbrella 1
+    ///Umbrella 1.
     glTranslatef(-0.75, 0.00, 0.0);
 
     glBegin(GL_QUADS);
