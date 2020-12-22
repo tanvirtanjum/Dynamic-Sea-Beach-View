@@ -2041,7 +2041,7 @@ void Evening_Sand()
 
     ///ADD MORE TEXURE
 }
-
+///Umbrella_Added
 void umbrella()
 {
     ///Umbrella 1
@@ -2207,8 +2207,6 @@ void seat()
     ///seat 1
     glScalef(1.8,1.8, 0);
     glTranslatef(-0.42, 0.42, 0.0);
-
-
 
     glBegin(GL_QUADS);
     glColor3ub(201, 200, 199);
