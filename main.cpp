@@ -12,6 +12,8 @@
 
 #define PI 3.14159265358979323846
 
+GLfloat i = 0.0f;
+
 GLfloat position_sun = 0.0f;
 GLfloat position_sun_down = 0.0f;
 GLfloat speed_sun = 0.0175f;
@@ -1733,6 +1735,61 @@ void Evening_Mountain()
     glLoadIdentity();
 }
 
+void Mill()
+{
+    glScalef(.10,.15, 1);
+    glBegin(GL_TRIANGLES);
+    glColor3ub(166, 166, 166);
+    glVertex2f(0.0f, 0.0f);
+    glVertex2f( 0.05f, -0.20f);
+    glVertex2f( -0.05f, -0.20f);
+    glEnd();
+    glBegin(GL_QUADS);
+    glColor3ub(166, 166, 166);
+    glVertex2f(-0.05, -.20f);
+    glVertex2f(0.05f, -.20f);
+    glVertex2f(0.05f, -0.62f);
+    glVertex2f(-0.05f, -0.62f);
+    glEnd();
+    glPushMatrix();
+    glRotatef(-i,0.0,0.0,0.1);
+    int iw;
+	GLfloat xw=-0.0f;
+	GLfloat yw=0.0f;
+	GLfloat radiusw =.05f;
+	int triangleAmountw = 100;
+	GLfloat twicePiw = 2.0f * PI;
+	glBegin(GL_TRIANGLE_FAN);
+	glColor3ub(0, 102, 153);
+    glVertex2f(xw, yw);
+    for(iw = 0; iw <= triangleAmountw; iw++)
+    {
+        glVertex2f(xw+(radiusw*cos(iw*twicePiw/triangleAmountw)), yw+(radiusw*sin(iw*twicePiw/triangleAmountw)));
+    }
+	glEnd();
+	glScalef(.7,.7, 1);
+    glBegin(GL_TRIANGLES);
+    glColor3ub(0, 102, 153);
+    glVertex2f(0.0f, 0.0f);
+    glVertex2f( 0.225f, -0.225f);
+    glVertex2f( 0.6f, -0.3f);
+    glEnd();
+    glBegin(GL_TRIANGLES);
+    glColor3ub(0, 102, 153);
+    glVertex2f(0.0f, 0.0f);
+    glVertex2f( -0.225f, -0.225f);
+    glVertex2f( -0.6f, -0.3f);
+    glEnd();
+    glBegin(GL_TRIANGLES);
+    glColor3ub(0, 102, 153);
+    glVertex2f(0.0f, 0.0f);
+    glVertex2f( -0.1f, 0.3f);
+    glVertex2f( 0.0f, 0.6f);
+    glEnd();
+    glPopMatrix();
+    i+=-0.30f;
+    glLoadIdentity();
+}
 void Day_Sand_Texure()
 {
     ///SAND TEXURE
@@ -2328,6 +2385,12 @@ void View_Night() ///NIGHT TIME
     Tree();
     umbrella();
     seat();
+    glTranslatef(-0.10,0.345,0.0);
+        Mill();
+    glLoadIdentity();
+    glTranslatef(0.10,0.345,0.0);
+        Mill();
+    glLoadIdentity();
     if(RainController == true)
     {
         Rain();
@@ -2356,6 +2419,12 @@ void View_Evening() ///EVENING TIME
     umbrella();
     Ship();
     seat();
+    glTranslatef(-0.10,0.345,0.0);
+        Mill();
+    glLoadIdentity();
+    glTranslatef(0.10,0.345,0.0);
+        Mill();
+    glLoadIdentity();
     if(RainController == true)
     {
         Rain();
@@ -2385,11 +2454,17 @@ void View_Day() ///DAY TIME
     umbrella();
     Ship();
     seat();
+    glTranslatef(-0.10,0.345,0.0);
+        Mill();
+    glLoadIdentity();
+    glTranslatef(0.10,0.345,0.0);
+        Mill();
+    glLoadIdentity();
     if(RainController == true)
     {
         Rain();
     }
-    glutTimerFunc(5500,load_Evening,1);
+    glutTimerFunc(5500,load_Evening,0);
 
     glFlush();
 }
