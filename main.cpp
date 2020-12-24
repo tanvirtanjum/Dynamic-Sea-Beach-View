@@ -1,9 +1,9 @@
-                            ///------------------****------------------///
-                                ///TANVIR TANJUM SHOURAV (17-35860-3)
-                                ///ASHFAQ AFZAL CHOWDHURY (17-35800-3)
-                                ///ZISHAD HOSSAIN LIMON (18-36101-1)
-                                ///ANIKA TAHSIN TINA (17-35852-3)
-                            ///------------------****------------------///
+                                            ///------------------****------------------///
+                                                ///TANVIR TANJUM SHOURAV (17-35860-3)
+                                                ///ASHFAQ AFZAL CHOWDHURY (17-35800-3)
+                                                ///ZISHAD HOSSAIN LIMON (18-36101-1)
+                                                ///ANIKA TAHSIN TINA (17-35852-3)
+                                            ///------------------****------------------///
 #include <cstdio>
 #include <windows.h>
 #include <GL/gl.h>
