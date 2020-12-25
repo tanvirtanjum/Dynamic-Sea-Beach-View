@@ -1887,36 +1887,6 @@ void Day_Mountain()
     glLoadIdentity();
 }
 
-void Night_Mountain()
-{
-    glBegin(GL_TRIANGLES);
-    glColor3ub(0, 26, 0);
-    glVertex2f(0.0f, 0.45f);
-    glVertex2f(0.15f, 0.15f);
-    glVertex2f(-0.15f, 0.15f);
-    glEnd();
-
-    glScalef(0.8,0.8,0.0);
-    glTranslatef(0.18,0.0335,0.0);
-    glBegin(GL_TRIANGLES);
-    glColor3ub(0, 26, 0);
-    glVertex2f(0.0f, 0.35f);
-    glVertex2f(0.15f, 0.15f);
-    glVertex2f(-0.15f, 0.15f);
-    glEnd();
-    glLoadIdentity();
-
-    glScalef(0.8,0.8,0.0);
-    glTranslatef(-0.18,0.0335,0.0);
-    glBegin(GL_TRIANGLES);
-    glColor3ub(0, 26, 0);
-    glVertex2f(0.0f, 0.35f);
-    glVertex2f(0.15f, 0.15f);
-    glVertex2f(-0.15f, 0.15f);
-    glEnd();
-    glLoadIdentity();
-}
-
 void Evening_Mountain()
 {
     glBegin(GL_TRIANGLES);
@@ -1940,6 +1910,36 @@ void Evening_Mountain()
     glTranslatef(-0.18,0.0335,0.0);
     glBegin(GL_TRIANGLES);
     glColor3ub(0, 77, 0);
+    glVertex2f(0.0f, 0.35f);
+    glVertex2f(0.15f, 0.15f);
+    glVertex2f(-0.15f, 0.15f);
+    glEnd();
+    glLoadIdentity();
+}
+
+void Night_Mountain()
+{
+    glBegin(GL_TRIANGLES);
+    glColor3ub(10, 51, 10);
+    glVertex2f(0.0f, 0.45f);
+    glVertex2f(0.15f, 0.15f);
+    glVertex2f(-0.15f, 0.15f);
+    glEnd();
+
+    glScalef(0.8,0.8,0.0);
+    glTranslatef(0.18,0.0335,0.0);
+    glBegin(GL_TRIANGLES);
+    glColor3ub(10, 51, 10);
+    glVertex2f(0.0f, 0.35f);
+    glVertex2f(0.15f, 0.15f);
+    glVertex2f(-0.15f, 0.15f);
+    glEnd();
+    glLoadIdentity();
+
+    glScalef(0.8,0.8,0.0);
+    glTranslatef(-0.18,0.0335,0.0);
+    glBegin(GL_TRIANGLES);
+    glColor3ub(10, 51, 10);
     glVertex2f(0.0f, 0.35f);
     glVertex2f(0.15f, 0.15f);
     glVertex2f(-0.15f, 0.15f);
