@@ -254,8 +254,6 @@ void Ship()
 
 void Rain()
 {
-    ///sndPlaySound( "W:\\CODES\\Computer Graphics\\Final\\Sea_Beach_Dynamic_View\\Dynamic-Sea-Beach-View\\Sounds\\Rain.wav", SND_ASYNC|SND_LOOP );
-
     glPushMatrix();
     glTranslatef(rain_position2,rain_position1, 0.0f);
 
@@ -1653,6 +1651,70 @@ void Night_Sky()
     Moon();
 }
 
+void Sea_Texute(int r, int g, int b)
+{
+    glBegin(GL_LINES);
+    glColor3ub(r, g, b);
+    glVertex2f(-0.95, 0.13);
+    glVertex2f(-0.90, 0.13);
+    glEnd();
+
+    glBegin(GL_LINES);
+    glColor3ub(r, g, b);
+    glVertex2f(-0.75, 0.124);
+    glVertex2f(-0.70, 0.124);
+    glEnd();
+
+    glBegin(GL_LINES);
+    glColor3ub(r, g, b);
+    glVertex2f(-0.55, 0.134);
+    glVertex2f(-0.50, 0.134);
+    glEnd();
+
+    glBegin(GL_LINES);
+    glColor3ub(r, g, b);
+    glVertex2f(-0.35, 0.120);
+    glVertex2f(-0.30, 0.120);
+    glEnd();
+
+
+    glBegin(GL_LINES);
+    glColor3ub(r, g, b);
+    glVertex2f(-0.15, 0.110);
+    glVertex2f(-0.10, 0.110);
+    glEnd();
+
+    glBegin(GL_LINES);
+    glColor3ub(r, g, b);
+    glVertex2f(0.05, 0.130);
+    glVertex2f(0.10, 0.130);
+    glEnd();
+
+    glBegin(GL_LINES);
+    glColor3ub(r, g, b);
+    glVertex2f(0.25, 0.1);
+    glVertex2f(0.20, 0.1);
+    glEnd();
+
+    glBegin(GL_LINES);
+    glColor3ub(r, g, b);
+    glVertex2f(0.45, 0.13);
+    glVertex2f(0.40, 0.13);
+    glEnd();
+
+    glBegin(GL_LINES);
+    glColor3ub(r, g, b);
+    glVertex2f(0.65, 0.1);
+    glVertex2f(0.60, 0.1);
+    glEnd();
+
+    glBegin(GL_LINES);
+    glColor3ub(r, g, b);
+    glVertex2f(0.85, 0.1);
+    glVertex2f(0.80, 0.1);
+    glEnd();
+}
+
 void Day_Sea()
 {
     glBegin(GL_QUADS);
@@ -1663,21 +1725,21 @@ void Day_Sea()
     glVertex2f(-1.0f, -0.30f); // top right
     glEnd();
 
-    ///ADD POLIGON IN SAND
+    ///SEA TEXURE
+    Sea_Texute(61, 117, 227);
+    glTranslatef(0.02,-0.075,0.0);
+        Sea_Texute(61, 117, 227);
+    glLoadIdentity();
+    glTranslatef(0.07,-0.15,0.0);
+        Sea_Texute(61, 117, 227);
+    glLoadIdentity();
+    glTranslatef(-0.05,-0.2275,0.0);
+        Sea_Texute(61, 117, 227);
+    glLoadIdentity();
+    glTranslatef(0.03,-0.35,0.0);
+        Sea_Texute(61, 117, 227);
+    glLoadIdentity();
 
-}
-
-void Night_Sea()
-{
-    glBegin(GL_QUADS);
-    glColor3ub(0, 34, 102);
-    glVertex2f(-1.0, .15f); // top left
-    glVertex2f(1.0f, .15f); // top right
-    glVertex2f(1.0, -0.30f); // top left
-    glVertex2f(-1.0f, -0.30f); // top right
-    glEnd();
-
-    ///ADD POLIGON IN SAND
 }
 
 void Evening_Sea()
@@ -1690,8 +1752,46 @@ void Evening_Sea()
     glVertex2f(-1.0f, -0.30f); // top right
     glEnd();
 
-    ///ADD POLIGON IN SAND
+    ///SEA TEXURE
+    Sea_Texute(51, 114, 242);
+    glTranslatef(0.02,-0.075,0.0);
+        Sea_Texute(51, 114, 242);
+    glLoadIdentity();
+    glTranslatef(0.07,-0.15,0.0);
+        Sea_Texute(51, 114, 242);
+    glLoadIdentity();
+    glTranslatef(-0.05,-0.2275,0.0);
+        Sea_Texute(51, 114, 242);
+    glLoadIdentity();
+    glTranslatef(0.03,-0.35,0.0);
+        Sea_Texute(51, 114, 242);
+    glLoadIdentity();
+}
 
+void Night_Sea()
+{
+    glBegin(GL_QUADS);
+    glColor3ub(0, 34, 102);
+    glVertex2f(-1.0, .15f); // top left
+    glVertex2f(1.0f, .15f); // top right
+    glVertex2f(1.0, -0.30f); // top left
+    glVertex2f(-1.0f, -0.30f); // top right
+    glEnd();
+
+    ///SEA TEXURE
+    Sea_Texute(17, 63, 156);
+    glTranslatef(0.02,-0.075,0.0);
+        Sea_Texute(17, 63, 156);
+    glLoadIdentity();
+    glTranslatef(0.07,-0.15,0.0);
+        Sea_Texute(17, 63, 156);
+    glLoadIdentity();
+    glTranslatef(-0.05,-0.2275,0.0);
+        Sea_Texute(17, 63, 156);
+    glLoadIdentity();
+    glTranslatef(0.03,-0.35,0.0);
+        Sea_Texute(17, 63, 156);
+    glLoadIdentity();
 }
 
 void Sea_Wave(int r, int g, int b)
