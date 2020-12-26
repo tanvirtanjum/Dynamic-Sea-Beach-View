@@ -61,7 +61,7 @@ void update_sun(int value)
     }
     position_sun -= speed_sun;
     position_sun_down -= speed_sun/3;
-	//glutPostRedisplay();
+
 	glutTimerFunc(135, update_sun, 0);
 }
 
@@ -73,7 +73,7 @@ void update_ship(int value)
         position_ship = 1.0f;
     }
     position_ship -= speed_ship;
-	//glutPostRedisplay();
+
 	glutTimerFunc(100, update_ship, 0);
 
 
@@ -81,18 +81,6 @@ void update_ship(int value)
 
 void update_sea_wave(int value)
 {
-/*
-   if(position_sea_wave <-.30)
-    {
-        position_sea_wave = .14f;
-    }
-    position_sea_wave -= speed_sea_wave;
-	//glutPostRedisplay();
-	glutTimerFunc(100, update_sea_wave, 0);
-
-	*/
-
-
 	position_sea_wave -= 50;
 	if(position_sea_wave <= -80)
 		position_sea_wave = 0;
@@ -100,8 +88,6 @@ void update_sea_wave(int value)
     glutPostRedisplay();
 
     glutTimerFunc(1500,update_sea_wave,0);
-
-
 }
 
 void update_moon(int value)
@@ -113,8 +99,8 @@ void update_moon(int value)
     }
     position_moon -= speed_moon;
     position_moon_down -= speed_moon/3;
-	//glutPostRedisplay();
-	glutTimerFunc(49, update_moon, 0);
+
+	glutTimerFunc(80, update_moon, 0);
 }
 
 void update_cloud(int value)
@@ -125,38 +111,32 @@ void update_cloud(int value)
         position_cloud = 1.0f;
     }
     position_cloud -= speed_sun;
-	//glutPostRedisplay();
+
 	glutTimerFunc(100, update_cloud, 0);
 }
 
 void update_bird(int value)
 {
-
     if(position_bird <-1.0)
     {
         position_bird = 1.0f;
     }
     position_bird -= speed_bird;
-	//glutPostRedisplay();
+
 	glutTimerFunc(100, update_bird, 0);
 }
 
 void update_rain(int value)
 {
-
      if(rain_position1 <-1.0)
         rain_position1 = 0.2f;
 
     rain_position1 -= rain_speed1;
 
-    //glutPostRedisplay();
-
     if(rain_position2 >1.0)
         rain_position2 = -1.0f;
 
     rain_position2 += rain_speed2;
-
-    //glutPostRedisplay();
 
     glutTimerFunc(30, update_rain, 0);
 }
@@ -2426,7 +2406,7 @@ void View_Night() ///NIGHT TIME
         Rain();
     }
     glutTimerFunc(5500,load_Restart,0);
-
+    position_sun = 0.0f;
     glFlush();
 }
 
@@ -2458,8 +2438,7 @@ void View_Evening() ///EVENING TIME
         Rain();
     }
     glutTimerFunc(5500,load_Night,0);
-
-    ///glutSwapBuffers();
+    position_moon = 0.0f;
 
     glFlush();
 }
