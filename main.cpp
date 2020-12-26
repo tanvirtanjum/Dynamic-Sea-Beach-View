@@ -923,7 +923,7 @@ void Moon()
     int triangleAmounts = 100;
     GLfloat twicePis = 2.0f * PI;
     glBegin(GL_TRIANGLE_FAN);
-    glColor3ub(255, 255, 204);
+    glColor3ub(255,255,240);
     glVertex2f(xs, ys);
     for(is = 0; is <= triangleAmounts; is++)
     {
@@ -1626,9 +1626,8 @@ void Night_Sky()
     glVertex2f(-1.0f, .15f);
     glEnd();
 
-    Stars();
-
     Moon();
+    Stars();
 }
 
 void Sea_Texute(int r, int g, int b)
