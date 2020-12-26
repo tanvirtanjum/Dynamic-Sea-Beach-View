@@ -237,7 +237,7 @@ void Rain()
     glPushMatrix();
     glTranslatef(rain_position2,rain_position1, 0.0f);
 
-    glLineWidth(1.5);
+    ///glLineWidth(1.5); /*DON'T USE LINE WIDTH
 
 
     // Rain line1
