@@ -1219,12 +1219,11 @@ void Bird()
 
 void Tree()
 {
-
-    glBegin(GL_QUADS);
+ glBegin(GL_QUADS);
     glColor3ub(156, 139, 102);
 
-    glVertex2f(0.8, -0.6f);
-    glVertex2f(0.75, -0.6f);
+    glVertex2f(0.8, -0.3f);
+    glVertex2f(0.75, -0.3f);
     glVertex2f(0.75, -0.9f);
     glVertex2f(0.8, -0.9f);
 
@@ -1232,18 +1231,26 @@ void Tree()
 
     glBegin(GL_TRIANGLES);
     glColor3ub(36, 211, 47);
-    glVertex2f(0.65,-0.6);
-    glVertex2f(0.9,-0.6);
-    glVertex2f(0.775,-0.4);
+    glVertex2f(0.65,-0.4);
+    glVertex2f(0.9,-0.4);
+    glVertex2f(0.775,-0.1);
     glEnd();
 
-    glTranslatef(0,0.04,0);
+    glTranslatef(0,0.06,0);
 
     glBegin(GL_TRIANGLES);
     glColor3ub(36, 211, 47);
-    glVertex2f(0.65,-0.6);
-    glVertex2f(0.9,-0.6);
-    glVertex2f(0.775,-0.4);
+    glVertex2f(0.65,-0.4);
+    glVertex2f(0.9,-0.4);
+    glVertex2f(0.775,-0.1);
+    glEnd();
+
+    glTranslatef(0.0f,0.1f,0);
+    glBegin(GL_TRIANGLES);
+    glColor3ub(36, 211, 47);
+    glVertex2f(0.65,-0.4);
+    glVertex2f(0.9,-0.4);
+    glVertex2f(0.775,-0.1);
     glEnd();
 
 
