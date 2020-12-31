@@ -4,7 +4,56 @@
 	<ActiveTarget name="Debug" />
 	<File name="main.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="57880" topLine="2590" />
+			<Cursor1 position="62245" topLine="195" />
 		</Cursor>
+		<Folding>
+			<Collapse line="54" />
+			<Collapse line="59" />
+			<Collapse line="73" />
+			<Collapse line="87" />
+			<Collapse line="98" />
+			<Collapse line="111" />
+			<Collapse line="135" />
+			<Collapse line="146" />
+			<Collapse line="161" />
+			<Collapse line="166" />
+			<Collapse line="252" />
+			<Collapse line="368" />
+			<Collapse line="531" />
+			<Collapse line="1190" />
+			<Collapse line="1211" />
+			<Collapse line="1243" />
+			<Collapse line="1356" />
+			<Collapse line="1516" />
+			<Collapse line="1557" />
+			<Collapse line="1637" />
+			<Collapse line="1669" />
+			<Collapse line="1735" />
+			<Collapse line="1815" />
+			<Collapse line="1891" />
+			<Collapse line="1905" />
+			<Collapse line="1973" />
+			<Collapse line="1987" />
+			<Collapse line="2051" />
+			<Collapse line="2078" />
+			<Collapse line="2104" />
+			<Collapse line="2130" />
+			<Collapse line="2193" />
+			<Collapse line="2223" />
+			<Collapse line="2253" />
+			<Collapse line="2283" />
+			<Collapse line="2339" />
+			<Collapse line="2359" />
+			<Collapse line="2379" />
+			<Collapse line="2399" />
+			<Collapse line="2501" />
+			<Collapse line="2602" />
+			<Collapse line="2704" />
+			<Collapse line="2774" />
+			<Collapse line="2812" />
+			<Collapse line="2848" />
+			<Collapse line="2853" />
+			<Collapse line="2858" />
+		</Folding>
 	</File>
 </CodeBlocks_layout_file>
