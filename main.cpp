@@ -41,6 +41,8 @@ GLfloat speed_sea_wave = 0.05f;
 
 boolean RainController = false;
 
+GLfloat ship_position = 0.0f;///ship
+
 void load_Start();
 void load_DayBack();
 
@@ -230,6 +232,132 @@ void Ship()
     glPopMatrix();
 
     glLoadIdentity();
+}
+void ship()
+{
+    glTranslatef(-ship_position,0.0f, 0.0f);
+    glBegin(GL_POLYGON);
+
+    glColor3ub(10, 10, 30);
+
+    glVertex2f(-0.6f,-0.7f);
+    glVertex2f(-0.5f,-0.8f);
+    glVertex2f(0.3f,-0.8f);
+    glVertex2f(0.4f,-0.7f);
+
+    glEnd();
+
+    glBegin(GL_POLYGON);
+
+    glColor3ub(227, 218, 209);
+
+    glVertex2f(-0.48f,-0.6f);
+    glVertex2f(-0.5f,-0.7f);
+    glVertex2f(0.2f,-0.7f);
+    glVertex2f(0.15f,-0.6f);
+
+    glEnd();
+
+    glBegin(GL_POLYGON);
+
+    glColor3ub(255, 255, 255);
+
+    glVertex2f(-0.48f,-0.65f);
+    glVertex2f(-0.48f,-0.68f);
+    glVertex2f(0.15f,-0.68f);
+    glVertex2f(0.15f,-0.65f);
+
+    glEnd();
+
+    ///chimni
+    glBegin(GL_POLYGON);
+
+    glColor3ub(217, 185, 24);
+
+    glVertex2f(-0.4f,-0.5f);
+    glVertex2f(-0.4f,-0.6f);
+    glVertex2f(-.3f,-0.6f);
+    glVertex2f(-.3f,-0.5f);
+
+    glEnd();
+
+    glBegin(GL_POLYGON);
+
+    glColor3ub(217, 185, 24);
+
+    glVertex2f(-0.2f,-0.5f);
+    glVertex2f(-0.2f,-0.6f);
+    glVertex2f(-.1f,-0.6f);
+    glVertex2f(-.1f,-0.5f);
+
+    glEnd();
+
+    glBegin(GL_POLYGON);
+
+    glColor3ub(217, 185, 24);
+
+    glVertex2f(-0.0f,-0.5f);
+    glVertex2f(-0.0f,-0.6f);
+    glVertex2f(.1f,-0.6f);
+    glVertex2f(.1f,-0.5f);
+
+    glEnd();
+
+
+
+
+
+    ///chimni border
+    glBegin(GL_POLYGON);
+
+    glColor3ub(8, 7, 6);
+
+    glVertex2f(-0.4f,-0.5f);
+    glVertex2f(-0.4f,-0.48f);
+    glVertex2f(-.3f,-0.48f);
+    glVertex2f(-.3f,-0.5f);
+
+    glEnd();
+
+    glBegin(GL_POLYGON);
+
+    glColor3ub(8, 7, 6);
+
+    glVertex2f(-0.2f,-0.5f);
+    glVertex2f(-0.2f,-0.48f);
+    glVertex2f(-.1f,-0.48f);
+    glVertex2f(-.1f,-0.5f);
+
+    glEnd();
+
+    glBegin(GL_POLYGON);
+
+    glColor3ub(8, 7, 6);
+
+    glVertex2f(-0.0f,-0.5f);
+    glVertex2f(-0.0f,-0.48f);
+    glVertex2f(.1f,-0.48f);
+    glVertex2f(.1f,-0.5f);
+
+    glEnd();
+
+
+}
+
+void Tower()
+{
+
+    glBegin(GL_POLYGON);
+
+    glColor3ub(187,182,180);
+
+    glVertex2f(0.2f,0.0f);
+    glVertex2f(0.2f,0.5f);
+    glVertex2f(0.25f,0.6f);
+    glVertex2f(0.3f,0.5f);
+    glVertex2f(0.3f,0.0f);
+
+    glEnd();
 }
 
 void Rain()
@@ -2434,6 +2562,8 @@ void View_Evening() ///EVENING TIME
     Evening_Mountain();
     Tree();
     Ship();
+    ship();
+    Tower();
     glTranslatef(-0.10,0.345,0.0);
         Mill();
     glLoadIdentity();
@@ -2466,6 +2596,8 @@ void View_Day() ///DAY TIME
     Day_Mountain();
     Tree();
     Ship();
+    ship();
+    Tower();
     glTranslatef(-0.10,0.345,0.0);
         Mill();
     glLoadIdentity();
