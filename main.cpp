@@ -4,6 +4,7 @@
                                                 ///ANIKA TAHSIN TINA (17-35852-3)
                                                 ///ASHFAQ AFZAL CHOWDHURY (17-35800-3)
                                             ///------------------****------------------///
+                                     ///GIT REPOSITORY: https://github.com/tanvirtanjum/Dynamic-Sea-Beach-View
 #include <cstdio>
 #include <windows.h>
 #include <GL/gl.h>
